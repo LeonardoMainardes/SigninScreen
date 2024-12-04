@@ -6,17 +6,17 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
-import card from "../assets/Card game-rafiki.svg";
-import camping from "../assets/Camping-rafiki.svg";
-import hide from "../assets/Hide and seek game-rafiki.svg";
-import scope from "../assets/Scope-rafiki.svg"
+import card from "../../assets/Card game-rafiki.svg";
+import camping from "../../assets/Camping-rafiki.svg";
+import hide from "../../assets/Hide and seek game-rafiki.svg";
+import scope from "../../assets/Scope-rafiki.svg"
 
 export function SignIn() {
   return (
     <>
       <main className="w-full h-screen flex">
         <div className="bg-secondary w-full h-full flex p-16 items-center justify-center">
-            <Carousel className="w-full max-w-xl">
+            <Carousel className="w-full max-w-xl" >
                 <CarouselContent>
                     <CarouselItem>
                         <div className="flex aspect-square rounded p-8">

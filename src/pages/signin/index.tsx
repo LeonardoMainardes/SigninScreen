@@ -19,10 +19,9 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
-import card from "../../assets/Card game-rafiki.svg";
-import camping from "../../assets/Camping-rafiki.svg";
-import hide from "../../assets/Hide and seek game-rafiki.svg";
-import scope from "../../assets/Scope-rafiki.svg";
+import digital from "../../assets/Digital transformation-pana.svg";
+import problem from "../../assets/Problem solving-bro.svg";
+import mobile from "../../assets/Mobile-bro.svg";
 import { Link } from "react-router-dom";
 
 export function SignIn() {
@@ -34,22 +33,17 @@ export function SignIn() {
             <CarouselContent>
               <CarouselItem>
                 <div className="flex aspect-square rounded p-2 bg-white">
-                  <img src={card} alt="Card" />
+                  <img src={digital} alt="Card" />
                 </div>
               </CarouselItem>
               <CarouselItem>
                 <div className="flex aspect-square rounded p-2 bg-white">
-                  <img src={camping} alt="Camping" />
+                  <img src={problem} alt="Camping" />
                 </div>
               </CarouselItem>
               <CarouselItem>
                 <div className="flex aspect-square rounded p-2 bg-white">
-                  <img src={hide} alt="Hide" />
-                </div>
-              </CarouselItem>
-              <CarouselItem>
-                <div className="flex aspect-square rounded p-2 bg-white">
-                  <img src={scope} alt="Scope" />
+                  <img src={mobile} alt="Hide" />
                 </div>
               </CarouselItem>
             </CarouselContent>

@@ -1,53 +1,49 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { Outlet } from "react-router-dom";
 import { CustomSidebar } from "@/components/CustomSidebar";
-import { ResizablePanelGroup, ResizablePanel } from "@/components/ui/resizable";
-import { Command, CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
-import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
-import { Mail, Bell } from "lucide-react";
+import { Mail, Bell, Sun } from "lucide-react";
 import { DropdownMenu } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+import { Avatar } from "@/components/ui/avatar";
+import { AvatarImage } from "@radix-ui/react-avatar";
+import ninja from "../assets/ninja.jpg";
+import { Separator } from "@/components/ui/separator";
 
 export default function Layout() {
-
-  const [open, setOpen] = useState(false)
- 
-  useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen((open) => !open)
-      }
-    }
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
-  }, [])
-
   return (
     <>
       <SidebarProvider>
         <CustomSidebar />
-        <main>
-          <ResizablePanelGroup direction="vertical">
-            <ResizablePanel>
-              <div className="flex items-center justify-center">
-                <SidebarTrigger className="p-5 mb-2" />
-                <div className="flex gap-2">
-                <Input placeholder="Checher..." type="search"/>
-                  <DropdownMenu>
-                    <Button><Mail/></Button>
-                  </DropdownMenu>
-                  <DropdownMenu>
-                    <Button><Bell/></Button>
-                  </DropdownMenu>
-                </div>
-              </div>
-              <div className="mt-10 px-6">
-                <Outlet />
-              </div>
-            </ResizablePanel>
-          </ResizablePanelGroup>
+        <main className="w-full h-screen">
+          <div className="flex items-center py-1">
+              <SidebarTrigger className="m-3" />
+              <Input placeholder="Checher..." type="search" className="w-96 border border-zinc-150" />
+            <div className="flex items-center ml-auto space-x-2 pr-4">
+              <DropdownMenu>
+                <Button className="bg-transparent">
+                  <Mail color="#000000"/>
+                </Button>
+              </DropdownMenu>
+              <DropdownMenu>
+                <Button className="bg-transparent" >
+                  <Bell color="#000000"/>
+                </Button>
+              </DropdownMenu>
+              <Button className="bg-transparent" >
+                <Sun color="#000000"/>
+              </Button>
+              <DropdownMenu>
+              <Avatar>
+                <AvatarImage src={ninja} />
+              </Avatar>
+              </DropdownMenu>
+            </div>
+          </div>
+          <Separator />
+          <div className="mt-1 mb-16 w-full p-4">
+            <Outlet />
+          </div>
         </main>
       </SidebarProvider>
     </>

@@ -39,6 +39,7 @@ export function CustomSidebar() {
         <SidebarGroup>
           <SidebarGroupContent>
             <div className="flex items-center justify-center">
+
               <h1 className="text-2xl font-bold text-cyan-900">Mon Application</h1>
             </div>
           </SidebarGroupContent>
